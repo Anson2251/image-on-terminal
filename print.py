@@ -113,6 +113,6 @@ for y in range(fin_height):
                 code = rgb_to_ansi(*colour)
             else:
                 code = rgb_to_ansi_escape(*colour)
-            pixel = f"{code}{"█" if args.ansi == 'n' else grey_chars[int(grey_scale/256*len(grey_chars))]}{reset_ansi()}"
+            pixel = f"{code}{"█" if args.ansi == 'n' else grey_chars[round(float(grey_scale/256*len(grey_chars)))]}{reset_ansi()}"
         print(pixel, end='')
     print()
